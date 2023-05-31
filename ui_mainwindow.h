@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -26,6 +27,7 @@ public:
     QAction *actionLogin;
     QAction *actionAdd_Room;
     QWidget *centralwidget;
+    QComboBox *comboBox;
     QMenuBar *menubar;
     QMenu *menuLogin;
     QStatusBar *statusbar;
@@ -41,6 +43,11 @@ public:
         actionAdd_Room->setObjectName(QString::fromUtf8("actionAdd_Room"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        comboBox = new QComboBox(centralwidget);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(540, 20, 69, 22));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -66,6 +73,9 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionLogin->setText(QApplication::translate("MainWindow", "Login", nullptr));
         actionAdd_Room->setText(QApplication::translate("MainWindow", "Add Room", nullptr));
+        comboBox->setItemText(0, QApplication::translate("MainWindow", "COM1", nullptr));
+        comboBox->setItemText(1, QApplication::translate("MainWindow", "COM2", nullptr));
+
         menuLogin->setTitle(QApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
