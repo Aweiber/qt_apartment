@@ -1,0 +1,10 @@
+debug
+release
+
+.qmake.stash
+
+apartment_lock.pro.user
+
+Makefile
+Makefile.Debug
+Makefile.Release
